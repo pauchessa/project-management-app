@@ -1,8 +1,17 @@
+import ProjectsList from "./components/ProjectsList.jsx";
+import NoProjectsPlaceholder from "./components/NoProjectsPlaceholder.jsx";
+import CreateProjectForm from "./components/CreateProjectForm.jsx";
 function App() {
   return (
-    <>
-      <h1 className="my-8 text-center text-5xl font-bold"></h1>
-    </>
+    <div className="">
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-[1fr_3fr] min-h-screen">
+        <ProjectsList />
+        <main className="bg-stone-200">
+          {/* <NoProjectsPlaceholder></NoProjectsPlaceholder>\ */}
+          <CreateProjectForm />
+        </main>
+      </div>
+    </div>
   );
 }
 
