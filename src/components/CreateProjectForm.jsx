@@ -2,7 +2,7 @@ export default function CreateProjectForm() {
   let pClasses = "flex flex-col gap-1";
   let labelClasses = "text-stone-500 text-sm font-semibold uppercase";
   let inputClasses =
-    "text-stone-700 text-md px-3 py-2 bg-stone-50 rounded-md border border-stone-300 focus:outline-none focus:ring-1 focus:ring-stone-400 transition-colors caret-stone-700 ";
+    "text-stone-700 text-base px-3 py-2 bg-stone-50 rounded-md border border-stone-300 focus:outline-none focus:ring-1 focus:ring-stone-400 transition-colors caret-stone-700 ";
 
   return (
     <div>
@@ -34,12 +34,12 @@ hover:bg-emerald-600
 hover:border-transparent
 hover:text-stone-100
 transition-colors 
-md:text-md lg:text-xl
+md:text-base lg:text-xl
 mb-8 px-4 py-2 rounded-md w-24"
           >
             Cancel
           </button>
-          <button className="bg-emerald-600 hover:bg-emerald-700 transition-colors duration-150 text-stone-100 md:text-md lg:text-xl mb-8 px-4 py-2 rounded-md w-24">
+          <button className="bg-emerald-600 hover:bg-emerald-700 transition-colors duration-150 text-stone-100 md:text-base lg:text-xl mb-8 px-4 py-2 rounded-md w-24">
             Save
           </button>
         </div>
