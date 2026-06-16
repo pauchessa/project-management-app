@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-[1fr_3fr] min-h-screen">
-        <ProjectsList />
+        <ProjectsList projectsList={projectsList} />
         <main className="bg-stone-200">
           {/* <ProjectDetails /> */}
           {/* <NoProjectsPlaceholder></NoProjectsPlaceholder> */}

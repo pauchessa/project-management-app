@@ -1,4 +1,4 @@
-export default function ProjectsList() {
+export default function ProjectsList({ projectsList }) {
   return (
     <aside className="bg-stone-800 text-stone-200 px-9 py-14 rounded-r-xl">
       <h2 className="text-2xl font-semibold mb-10 uppercase">Your projects</h2>
@@ -7,12 +7,12 @@ export default function ProjectsList() {
         + Add Project
       </button>
       <ul className="text-stone-200 text-xl flex flex-col gap-1">
-        <li>
-          <button>Project 1</button>
-        </li>
-        <li>
-          <button>Project 2</button>
-        </li>
+        {projectsList.length > 0 &&
+          projectsList.map((project) => (
+            <li>
+              <button>{project.title}</button>
+            </li>
+          ))}
       </ul>
     </aside>
   );
