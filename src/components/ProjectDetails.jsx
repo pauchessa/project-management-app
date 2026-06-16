@@ -1,4 +1,4 @@
-export default function ProjectDetails() {
+export default function ProjectDetails({}) {
   return (
     <div className="text-stone-700 px-9 py-14">
       <div className="flex justify-between">
