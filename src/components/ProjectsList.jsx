@@ -1,4 +1,13 @@
-export default function ProjectsList({ setCurrentComponent, projectsList }) {
+import { useState } from "react";
+export default function ProjectsList({
+  setCurrentComponent,
+  projectsList,
+  updateProjectsList,
+}) {
+  function handleProjectClick(project, index) {
+    setCurrentComponent("projectDetails");
+  }
+
   return (
     <aside className="bg-stone-800 text-stone-200 px-9 py-14 rounded-r-xl">
       <h2 className="text-2xl font-semibold mb-10 uppercase">Your projects</h2>
@@ -13,7 +22,7 @@ export default function ProjectsList({ setCurrentComponent, projectsList }) {
         {projectsList.length > 0 &&
           projectsList.map((project, index) => (
             <li key={index}>
-              <button onClick={() => setCurrentComponent("projectDetails")}>
+              <button onClick={() => handleProjectClick()}>
                 {project.title}
               </button>
             </li>

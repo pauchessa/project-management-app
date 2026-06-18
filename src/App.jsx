@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [currentComponent, setCurrentComponent] = useState("placeholder");
-  const [projectsList, updateProjectsList] = useState([]);
+  const [projectsList, updateProjectsList] = useState({});
   console.log(projectsList);
   return (
     <div className="">

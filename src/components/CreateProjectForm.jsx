@@ -13,7 +13,8 @@ export default function CreateProjectForm({
   const [project, updateProject] = useState(initialState);
 
   function saveProject(project) {
-    updateProjectsList((list) => [...list, project]);
+    const id = Math.random().toString(36).slice(2);
+    updateProjectsList((list) => ({ ...list, [id]: project }));
     updateProject(initialState);
   }
 
