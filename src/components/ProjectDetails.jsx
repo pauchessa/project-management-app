@@ -1,8 +1,14 @@
-export default function ProjectDetails({}) {
+export default function ProjectDetails({
+  selectedId,
+  projectsList,
+  updateProjectsList,
+}) {
   return (
     <div className="text-stone-700 px-9 py-14">
       <div className="flex justify-between">
-        <h3 className="text-4xl font-bold mb-3">Learning React</h3>
+        <h3 className="text-4xl font-bold mb-3">
+          {projectsList[selectedId].title}
+        </h3>
         <button
           className=" rounded-md border-2
     border-stone-300
@@ -14,10 +20,11 @@ export default function ProjectDetails({}) {
         </button>
       </div>
 
-      <p className="text-stone-500 text-base mb-6">Dec 12, 2027</p>
+      <p className="text-stone-500 text-base mb-6">
+        {projectsList[selectedId].date}
+      </p>
       <p className="text-stone-700 text-lg mb-6">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-        exercitationem, officia rem fugiat odio ipsa
+        {projectsList[selectedId].description}
       </p>
       <hr className="border-stone-300 border-2 mb-6"></hr>
       <h4 className="text-stone-600 text-3xl font-bold mb-4">Tasks</h4>

@@ -8,13 +8,16 @@ import { useState } from "react";
 function App() {
   const [currentComponent, setCurrentComponent] = useState("placeholder");
   const [projectsList, updateProjectsList] = useState({});
+  const [selectedId, setSelectedId] = useState(null);
   console.log(projectsList);
+
   return (
     <div className="">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-[1fr_3fr] min-h-screen">
         <ProjectsList
           setCurrentComponent={setCurrentComponent}
           projectsList={projectsList}
+          setSelectedId={setSelectedId}
         />
         <main className="bg-stone-200">
           {currentComponent === "placeholder" && (
@@ -26,9 +29,16 @@ function App() {
             <CreateProjectForm
               projectsList={projectsList}
               updateProjectsList={updateProjectsList}
+              setCurrentComponent={setCurrentComponent}
             />
           )}
-          {currentComponent === "projectDetails" && <ProjectDetails />}
+          {currentComponent === "projectDetails" && selectedId && (
+            <ProjectDetails
+              projectsList={projectsList}
+              selectedId={selectedId}
+              updateProjectsList={updateProjectsList}
+            />
+          )}
         </main>
       </div>
     </div>

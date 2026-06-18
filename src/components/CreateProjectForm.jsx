@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function CreateProjectForm({
   projectsList,
   updateProjectsList,
+  setCurrentComponent,
 }) {
   let pClasses = "flex flex-col gap-1";
   let labelClasses = "text-stone-500 text-sm font-semibold uppercase";
@@ -64,6 +65,7 @@ export default function CreateProjectForm({
         </div>
         <div className="flex justify-end gap-4 px-8">
           <button
+            // onClick={setCurrentComponent("placeholder")}
             className="bg-stone-200
  border-2 border-emerald-500
 text-emerald-600

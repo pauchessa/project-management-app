@@ -3,8 +3,13 @@ export default function ProjectsList({
   setCurrentComponent,
   projectsList,
   updateProjectsList,
+  selectedId,
+  setSelectedId,
 }) {
   function handleProjectClick(id) {
+    console.log("click");
+    console.log(id);
+    setSelectedId(id);
     setCurrentComponent("projectDetails");
   }
 
