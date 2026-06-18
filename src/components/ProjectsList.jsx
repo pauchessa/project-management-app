@@ -4,7 +4,7 @@ export default function ProjectsList({
   projectsList,
   updateProjectsList,
 }) {
-  function handleProjectClick(project, index) {
+  function handleProjectClick(id) {
     setCurrentComponent("projectDetails");
   }
 
@@ -19,14 +19,13 @@ export default function ProjectsList({
         + Add Project
       </button>
       <ul className="text-stone-200 text-xl flex flex-col gap-1">
-        {projectsList.length > 0 &&
-          projectsList.map((project, index) => (
-            <li key={index}>
-              <button onClick={() => handleProjectClick()}>
-                {project.title}
-              </button>
-            </li>
-          ))}
+        {Object.entries(projectsList).map(([id, project]) => (
+          <li key={id}>
+            <button onClick={() => handleProjectClick(id)}>
+              {project.title}
+            </button>
+          </li>
+        ))}
       </ul>
     </aside>
   );
