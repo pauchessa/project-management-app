@@ -19,6 +19,10 @@ export default function CreateProjectForm({
     updateProject(initialState);
   }
 
+  function handleCancel() {
+    setCurrentComponent("placeholder");
+  }
+
   function handleInput(e) {
     updateProject((prevProject) => {
       const updatedProject = {
@@ -65,7 +69,8 @@ export default function CreateProjectForm({
         </div>
         <div className="flex justify-end gap-4 px-8">
           <button
-            // onClick={setCurrentComponent("placeholder")}
+            type="button"
+            onClick={handleCancel}
             className="bg-stone-200
  border-2 border-emerald-500
 text-emerald-600
