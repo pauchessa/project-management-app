@@ -1,19 +1,18 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
+const initialState = [];
 export default function ProjectDetails({
   selectedId,
   projectsList,
   updateProjectsList,
 }) {
   const taskInput = useRef();
-  const initialState = [];
-  const [tasks, updateTasks] = useState(initialState);
+
   function addTask() {
     if (taskInput.current.value) {
       const task = taskInput.current.value;
 
-      console.log(task);
-      const updatedTasks = [...tasks, task];
-      updateTasks(updatedTasks);
+      const updatedTasks = [...projectsList[selectedId].tasks, task];
+
       updateProjectsList((list) => ({
         ...list,
         [selectedId]: {
@@ -22,9 +21,8 @@ export default function ProjectDetails({
         },
       }));
     }
-    taskInput.current.value = "";
 
-    updateTasks(initialState);
+    taskInput.current.value = "";
   }
 
   return (

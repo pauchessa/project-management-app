@@ -9,7 +9,7 @@ export default function CreateProjectForm({
   let labelClasses = "text-stone-500 text-sm font-semibold uppercase";
   let inputClasses =
     "text-stone-700 text-base px-3 py-2 bg-stone-50 rounded-md border border-stone-300 focus:outline-none focus:ring-1 focus:ring-stone-400 transition-colors caret-stone-700 ";
-  const initialState = { title: "", description: "", date: "" };
+  const initialState = { title: "", description: "", date: "", tasks: [] };
 
   const [project, updateProject] = useState(initialState);
 
