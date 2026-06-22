@@ -10,9 +10,7 @@ export default function ProjectDetails({
   function addTask() {
     if (taskInput.current.value) {
       const task = taskInput.current.value;
-
       const updatedTasks = [...projectsList[selectedId].tasks, task];
-
       updateProjectsList((list) => ({
         ...list,
         [selectedId]: {
@@ -21,8 +19,17 @@ export default function ProjectDetails({
         },
       }));
     }
-
     taskInput.current.value = "";
+  }
+
+  function removeTask(task) {
+    const updatedTasks = [
+      ...projectsList[selectedId].tasks.filter((element) => element !== task),
+    ];
+    updateProjectsList((list) => ({
+      ...list,
+      [selectedId]: { ...projectsList[selectedId], tasks: updatedTasks },
+    }));
   }
 
   return (
@@ -71,7 +78,10 @@ export default function ProjectDetails({
             className="flex justify-between text-stone-700 text-lg "
           >
             <p>{task}</p>
-            <button className="text-stone-600 hover:text-rose-600 md:text-sm lg:text-base px-3 py-2 self-center transition-colors">
+            <button
+              onClick={() => removeTask(task)}
+              className="text-stone-600 hover:text-rose-600 md:text-sm lg:text-base px-3 py-2 self-center transition-colors"
+            >
               Delete
             </button>
           </li>
