@@ -37,6 +37,7 @@ function App() {
               projectsList={projectsList}
               selectedId={selectedId}
               updateProjectsList={updateProjectsList}
+              setCurrentComponent={setCurrentComponent}
             />
           )}
         </main>

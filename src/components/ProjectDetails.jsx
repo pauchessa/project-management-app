@@ -1,9 +1,11 @@
 import { useRef } from "react";
-const initialState = [];
+
 export default function ProjectDetails({
   selectedId,
+  setSelectedId,
   projectsList,
   updateProjectsList,
+  setCurrentComponent,
 }) {
   const taskInput = useRef();
 
@@ -32,6 +34,13 @@ export default function ProjectDetails({
     }));
   }
 
+  function deleteProject() {
+    const { [selectedId]: _, ...newList } = projectsList;
+    updateProjectsList(newList);
+
+    setCurrentComponent("createProject");
+  }
+
   return (
     <div className="text-stone-700 px-9 py-14">
       <div className="flex justify-between">
@@ -39,6 +48,7 @@ export default function ProjectDetails({
           {projectsList[selectedId].title}
         </h3>
         <button
+          onClick={deleteProject}
           className=" rounded-md border-2
     border-stone-300
     text-stone-600
