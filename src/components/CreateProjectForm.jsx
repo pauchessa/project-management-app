@@ -45,7 +45,7 @@ export default function CreateProjectForm({
               value={project.title}
               onChange={handleInput}
               type="text"
-              className={`${inputClasses} h-8`}
+              className={`${inputClasses} h-full`}
             ></input>
           </p>
           <p className={pClasses}>
@@ -57,15 +57,23 @@ export default function CreateProjectForm({
               className={`${inputClasses} h-12`}
             ></textarea>
           </p>
-          <p className={pClasses}>
+          <div className={`${pClasses}`}>
             <label className={labelClasses}>Due date</label>
-            <input
-              name="date"
-              value={project.date}
-              onChange={handleInput}
-              className={`${inputClasses} h-8`}
-            ></input>
-          </p>
+            <div className="relative">
+              <input
+                name="date"
+                value={project.date}
+                onChange={handleInput}
+                className={`${inputClasses} h-full w-full pr-8`}
+              ></input>
+              <button
+                className="text-stone-700 pt-1 absolute top-1/2 right-3 -translate-y-1/2"
+                type="button"
+              >
+                <ion-icon name="calendar-clear-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
         </div>
         <div className="flex justify-end gap-4 px-8">
           <button
