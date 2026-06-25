@@ -18,11 +18,7 @@ function App() {
           projectsList={projectsList}
           setSelectedId={setSelectedId}
         />
-        {/* <CreateProjectForm
-          projectsList={projectsList}
-          updateProjectsList={updateProjectsList}
-          setCurrentComponent={setCurrentComponent}
-        /> */}
+
         <main className="bg-stone-200">
           {currentComponent === "placeholder" && (
             <NoProjectsPlaceholder
