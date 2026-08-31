@@ -7,3 +7,6 @@ A React-based Project Management Application developed as a learning project to 
 - React
 - JavaScript
 - Tailwind CSS
+
+## Check out live demo on Netlify:
+project-management-app-pauchessa.netlify.app
